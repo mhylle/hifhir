@@ -1,3 +1,14 @@
 package info.mhylle.playground.hifhir.model
 
-data class Patient(val id: String, val firstName: String, val middleName: String, val familyName: String)
+import com.fasterxml.jackson.annotation.JsonCreator
+import java.time.LocalDateTime
+
+data class Patient @JsonCreator constructor(val id: String,
+                                            val identifier: String,
+                                            var firstName: String,
+                                            var middleName: String,
+                                            var familyName: String,
+                                            val gender: String,
+                                            val birthDate: LocalDateTime?,
+                                            var address: String,
+                                            var responsibleUnit: String?)

@@ -1,4 +1,4 @@
-package info.mhylle.playground.hifhir
+package info.mhylle.playground.hifhir.controllers
 
 import info.mhylle.playground.hifhir.data.Repository
 import info.mhylle.playground.hifhir.model.EpisodeOfCare
@@ -9,9 +9,9 @@ class EpisodeOfCareController {
 
     @RequestMapping("/episodesOfCare/{id}")
     fun get(@PathVariable("id") oid: String): EpisodeOfCare? {
-        return EpisodeOfCare("1", "test")
-//        return Repository.episodesOfCare.find { (id) -> id == oid }
+        return Repository.episodesOfCare.find { (id) -> id == oid }
     }
+
     @RequestMapping("/episodesOfCare")
     fun get(): List<EpisodeOfCare> {
         return Repository.episodesOfCare
