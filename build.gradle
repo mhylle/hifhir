@@ -35,11 +35,21 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
+
     compile 'org.springframework.boot:spring-boot-starter-web'
+
+    // Jackson Dependencies
+    compile "com.fasterxml.jackson.core:jackson-annotations"
+    compile "com.fasterxml.jackson.core:jackson-core"
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    runtime "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    runtime "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    runtime "com.fasterxml.jackson.module:jackson-module-kotlin"
+
     testCompile 'junit:junit'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
+    gradleVersion = '3.5'
 }
 
