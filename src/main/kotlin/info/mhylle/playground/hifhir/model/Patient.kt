@@ -10,5 +10,5 @@ data class Patient @JsonCreator constructor(val id: String,
                                             var familyName: String,
                                             val gender: String,
                                             val birthDate: LocalDateTime?,
-                                            var address: String,
+                                            var address: List<String>?,
                                             var responsibleUnit: String?)

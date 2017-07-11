@@ -37,6 +37,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
 
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.data:spring-data-jpa:1.11.4.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.0.0.RELEASE'
+
 
     // Jackson Dependencies
     compile "com.fasterxml.jackson.core:jackson-annotations"
@@ -45,8 +48,10 @@ dependencies {
     runtime "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
     runtime "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
     runtime "com.fasterxml.jackson.module:jackson-module-kotlin"
-
+// https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    runtime group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
     testCompile 'junit:junit'
+
 }
 
 task wrapper(type: Wrapper) {
