@@ -1,6 +1,18 @@
+
 spring:
   jackson:
     serialization:
     indent_output: true
     write_dates_as_timestamps: false
     write_durations_as_timestamps: false
+  data:
+    mongodb:
+      database: test
+logging:
+  level:
+    org:
+      springframework: ERROR
+      hibernate: ERROR
+      mongodb: ERROR
+server:
+  port: 8080
