@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class HelloUniverseController {
+class HelloHiFhirController {
     @GetMapping("/")
-    fun getHelloUniverse() = "Hello Universe"
+    fun getHelloHiFHIR() = "Hello HiFHIR"
 }

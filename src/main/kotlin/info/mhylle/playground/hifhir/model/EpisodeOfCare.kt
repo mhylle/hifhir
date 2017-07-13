@@ -1,12 +1,16 @@
 package info.mhylle.playground.hifhir.model
 
-import com.fasterxml.jackson.annotation.JsonCreator
+import org.bson.types.ObjectId
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.Field
 
 
-data class EpisodeOfCare @JsonCreator constructor(val id: Long,
-                                                  val identifier: String,
-                                                  val status: String,
-                                                  val diagnosis: String?,
-                                                  val responsibleUnit: String?,
-                                                  val period: String?,
-                                                  val patient: String?)
+@Document(collection = "hifhir")
+data class EpisodeOfCare constructor(@Id val id: ObjectId,
+                                                  @Field val identifier: String,
+                                                  @Field val status: String,
+                                                  @Field val diagnosis: String,
+                                                  @Field val responsibleUnit: String?,
+                                                  @Field val period: String?,
+                                                  @Field val patient: String?)

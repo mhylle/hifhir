@@ -1,6 +1,12 @@
 package info.mhylle.playground.hifhir.data
 
 import info.mhylle.playground.hifhir.model.EpisodeOfCare
-import org.springframework.data.repository.CrudRepository
+import org.bson.types.ObjectId
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.repository.query.Param
+import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
-interface EpisodeOfCareRepository : CrudRepository<EpisodeOfCare, Long>
+@RepositoryRestResource(path = "episodesofcare")
+interface EpisodeOfCareRepository : MongoRepository<EpisodeOfCare, ObjectId> {
+    fun findAllByIdentifier(@Param("identifier") identifier: String): List<EpisodeOfCare>
+}
