@@ -7,9 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Field
 
 
 @Document(collection = "hifhir")
-data class Patient constructor(
+data class Procedure constructor(
         @Id val id: ObjectId,
         @Field val identifier: String,
-        @Field val firstname: String,
-        @Field val familyName: String,
-        @Field val address: String)
+        @Field val status: String,
+        @Field val type: String,
+        @Field val encounterClass: String,
+        @Field val diagnosis: String,
+        @Field val priority: String,
+        @Field val period: String?,
+        @Field val patient: String?)
