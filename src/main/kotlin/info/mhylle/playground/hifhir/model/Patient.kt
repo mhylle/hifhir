@@ -12,4 +12,5 @@ data class Patient constructor(
         @Field val identifier: String,
         @Field val firstname: String,
         @Field val familyName: String,
-        @Field val address: String)
+        @Field val address: String,
+        @Field val episodesOfCare: List<ObjectId>?)

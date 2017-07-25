@@ -4,11 +4,11 @@ import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
+import java.time.LocalDateTime
 
 @Document(collection = "hifhir")
-data class Procedure constructor(
+data class Period constructor(
         @Id val id: ObjectId,
-        @Field val code: String,
-        @Field val period: Period,
-        @Field val producer: String
+        @Field val start: LocalDateTime,
+        @Field val end: LocalDateTime?
         )
