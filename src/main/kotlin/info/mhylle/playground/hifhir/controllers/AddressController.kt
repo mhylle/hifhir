@@ -1,32 +1,32 @@
 package info.mhylle.playground.hifhir.controllers
 
 
-import info.mhylle.playground.hifhir.data.PatientRepository
-import info.mhylle.playground.hifhir.model.Patient
+import info.mhylle.playground.hifhir.data.AddressRepository
+import info.mhylle.playground.hifhir.model.Address
 import org.bson.types.ObjectId
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/patients")
-class PatientsController(val repository: PatientRepository) {
+@RequestMapping("/addresses")
+class AddressController(val repository: AddressRepository) {
 
     @GetMapping("/")
     fun findAll() = repository.findAll()
 
     @PostMapping
-    fun addPatient(@RequestBody patient: Patient) = repository.save(patient)
+    fun addAddress(@RequestBody address: Address) = repository.save(address)
 
     @PutMapping("/{id}")
-    fun updatePatient(@PathVariable id: ObjectId, @RequestBody patient: Patient) {
-        assert(patient.id == id)
-        repository.save(patient)
+    fun updateAddress(@PathVariable id: ObjectId, @RequestBody address: Address) {
+        assert(address.id == id)
+        repository.save(address)
     }
 
     @GetMapping("/identifier/{identifier}")
     fun getByIdentifier(@PathVariable identifier: String) = repository.findByIdentifier(identifier)
 
     @DeleteMapping("/{id}")
-    fun removePatient(@PathVariable id: ObjectId) = repository.delete(id)
+    fun removeAddress(@PathVariable id: ObjectId) = repository.delete(id)
 
     @GetMapping("/{id")
     fun getById(@PathVariable id: ObjectId) = repository.findOne(id)
