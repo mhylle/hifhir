@@ -17,7 +17,7 @@ class EncounterController(val repository: EncounterRepository) {
     fun addEncounter(@RequestBody encounter: Encounter) = repository.save(encounter)
 
     @PutMapping("/{id}")
-    fun updateDiagnosis(@PathVariable id: ObjectId, @RequestBody encounter: Encounter) {
+    fun updateEncounter(@PathVariable id: ObjectId, @RequestBody encounter: Encounter) {
         assert(encounter.id == id)
         repository.save(encounter)
     }
