@@ -7,7 +7,7 @@ import org.bson.types.ObjectId
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/patients/")
 class PatientsController(val repository: PatientRepository) {
 
     @GetMapping("/")
@@ -21,7 +21,6 @@ class PatientsController(val repository: PatientRepository) {
         assert(patient.id == id)
         repository.save(patient)
     }
-
 
     @GetMapping("/identifier/{identifier}")
     fun getByIdentifier(@PathVariable identifier: String) = repository.findByIdentifier(identifier)
