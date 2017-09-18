@@ -22,6 +22,14 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'kotlin-jpa'
 apply plugin: 'kotlin-noarg'
+apply plugin: 'project-report'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'build-dashboard'
+
+htmlDependencyReport {
+    projects = project.allprojects
+}
 
 noArg {
     // define annotation, where you need an empty custructor
