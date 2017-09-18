@@ -28,6 +28,5 @@ class PatientsController(val repository: PatientRepository) {
     @DeleteMapping("/{id}")
     fun removePatient(@PathVariable id: ObjectId) = repository.delete(id)
 
-    @GetMapping("/{id")
-    fun getById(@PathVariable id: ObjectId) = repository.findOne(id)
+    @GetMapping("/{id") fun getById(@PathVariable id: ObjectId) = repository.findOne(id)
 }
