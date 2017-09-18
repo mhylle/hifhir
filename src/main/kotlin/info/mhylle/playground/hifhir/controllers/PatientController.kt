@@ -7,7 +7,7 @@ import org.bson.types.ObjectId
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/patients/")
 class PatientsController(val repository: PatientRepository) {
 
     @GetMapping("/")
